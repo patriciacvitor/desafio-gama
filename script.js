@@ -1,7 +1,5 @@
 'use strict'
 
-// const axios = require('axios');
-
 const form = document.getElementById('form');
 const messageContainer = document.querySelector('.message-container');
 const message = document.getElementById('message');
@@ -9,6 +7,18 @@ const cep = document.getElementById('cep');
 
 const resetBtn = document.getElementById('reset-form');
 const submitBtn = document.getElementById('submit-form');
+
+const fetchDados = () => {
+    const url = `https://desafio-gama-backend.herokuapp.com/`;
+
+    fetch(url)
+        .then(response => response.json())
+        .then(dados => {
+            console.log(dados);
+        })
+} 
+
+fetchDados();
 
 // let apiAddress = [];
 
